@@ -106,7 +106,7 @@ To run the DOPC service locally:
 
  **2. Navigate to the project directory:**
 
-```cd DOPC```
+```cd Delivery_order_price_calculator```
 
  **3. Install the necessary dependencies:**
 
