@@ -80,7 +80,8 @@ Example Error Response
 
 For a more detailed walkthrough and examples, you can refer to the Postman documentation for this API:
 
-View Postman Documentation
+View Postman Documentation ---> https://documenter.getpostman.com/view/18629048/2sB2cSfiDS
+
 How It Works
 
     The user sends a GET request to the DOPC endpoint, providing the required query parameters (venue_slug, cart_value, user_lat, and user_lon).
