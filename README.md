@@ -61,7 +61,7 @@ The response will be a JSON object that includes the calculated total price, the
 
 - delivery (object):
 
-  - fee (integer): The calculated delivery fee based on the venue, distance, and cart value.
+  - fee (integer): The calculated delivery fee based on the venue and distance.
 
   - distance (integer): The calculated delivery distance in meters from the user's location to the venue.
 
