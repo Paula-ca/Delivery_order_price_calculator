@@ -80,7 +80,7 @@ For example:
 
 For a more detailed walkthrough and examples, you can refer to the Postman documentation for this API:
 
-[View Postman Documentation](https://documenter.getpostman.com/view/18629048/2sB2cSfiDS).
+[View Postman Documentation](https://documenter.getpostman.com/view/18629048/2sB2cSfiDS)
 
 **How It Works:**
 
