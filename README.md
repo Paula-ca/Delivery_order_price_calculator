@@ -25,7 +25,8 @@ Example Request
 
 An example of a request to the DOPC service could look like this:
 
-GET http://localhost:8080/api/v1/delivery-order-price?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087
+GET 
+"```"http://localhost:8080/api/v1/delivery-order-price?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087"```"
 
 In this example:
 
