@@ -22,7 +22,8 @@ The endpoint should return a JSON response in the following format:
     "distance": 177
   }
 }
-where
+
+Where:
 
     total_price (integer): The calculated total price
     small_order_surcharge (integer): The calculated small order surcharge
