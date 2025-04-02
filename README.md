@@ -26,15 +26,15 @@ Example Request
 An example of a request to the DOPC service could look like this:
 
 GET 
-"```"http://localhost:8080/api/v1/delivery-order-price?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087"```"
+```"http://localhost:8080/api/v1/delivery-order-price?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087"```
 
 In this example:
 
-    The venue_slug is home-assignment-venue-helsinki.
+> The venue_slug is home-assignment-venue-helsinki.
 
-    The cart_value is 1000 (total value of items in the shopping cart).
+> The cart_value is 1000 (total value of items in the shopping cart).
 
-    The user_lat and user_lon are the latitude and longitude of the user's location in Helsinki.
+> The user_lat and user_lon are the latitude and longitude of the user's location in Helsinki.
 
 ## API Response
 
