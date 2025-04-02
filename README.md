@@ -39,8 +39,8 @@ In this example:
 ## API Response
 
 The response will be a JSON object that includes the calculated total price, the small order surcharge, the cart value, and the delivery details (fee and distance).
-Example Response
-
+Example Response:
+```json
 {
   "total_price": 1190,
   "small_order_surcharge": 0,
@@ -50,20 +50,20 @@ Example Response
     "distance": 177
   }
 }
+```
 
 ## Response Fields
+> total_price (integer): The calculated total price for the delivery order, which includes the cart value and the delivery fee.
 
-    total_price (integer): The calculated total price for the delivery order, which includes the cart value and the delivery fee.
+> small_order_surcharge (integer): The surcharge applied if the order value is too small (e.g., a minimum cart value threshold). This value is 0 if no surcharge is applied.
 
-    small_order_surcharge (integer): The surcharge applied if the order value is too small (e.g., a minimum cart value threshold). This value is 0 if no surcharge is applied.
+> cart_value (integer): The cart value provided in the query parameters (same as cart_value).
 
-    cart_value (integer): The cart value provided in the query parameters (same as cart_value).
+> delivery (object):
 
-    delivery (object):
+  > fee (integer): The calculated delivery fee based on the venue, distance, and cart value.
 
-        fee (integer): The calculated delivery fee based on the venue, distance, and cart value.
-
-        distance (integer): The calculated delivery distance in meters from the user's location to the venue.
+  > distance (integer): The calculated delivery distance in meters from the user's location to the venue.
 
 ## Error Handling
 
@@ -71,15 +71,17 @@ If any of the required query parameters are missing or invalid, or if there is a
 
 For example:
 
-    If cart_value is not a valid integer, the response will be a 400 Bad Request with an error message like "Invalid cart_value".
+  > If cart_value is not a valid integer, the response will be a 400 Bad Request with an error message like "Invalid cart_value".
 
-    If venue_slug is missing, the response will be a 400 Bad Request with an error message like "Venue slug is required".
+  > If venue_slug is missing, the response will be a 400 Bad Request with an error message like "Venue slug is required".
 
 Example Error Response
 
+```json
 {
   "error": "Invalid cart_value"
 }
+```
 
 ## Postman Documentation
 
@@ -89,43 +91,43 @@ For a more detailed walkthrough and examples, you can refer to the Postman docum
 
 How It Works
 
-    The user sends a GET request to the DOPC endpoint, providing the required query parameters (venue_slug, cart_value, user_lat, and user_lon).
+  > The user sends a GET request to the DOPC endpoint, providing the required query parameters (venue_slug, cart_value, user_lat, and user_lon).
 
-    The service processes the request, validates the inputs, and then fetches data from the external Home Assignment API to calculate the delivery fee and distance.
+  > The service processes the request, validates the inputs, and then fetches data from the external Home Assignment API to calculate the delivery fee and distance.
 
-    The service calculates the total price, including any applicable small order surcharges, and then sends the response in the specified JSON format.
+  > The service calculates the total price, including any applicable small order surcharges, and then sends the response in the specified JSON format.
 
-Notes
+** Notes **
 
-    The DOPC service integrates with external APIs to fetch real-time venue data and calculate delivery charges. These external APIs may be subject to availability or changes in their structure.
+  > The DOPC service integrates with external APIs to fetch real-time venue data and calculate delivery charges. These external APIs may be subject to availability or changes in their structure.
 
-    The small_order_surcharge can be configured based on the venue’s business rules. By default, it is set to 0.
+  > The small_order_surcharge can be configured based on the venue’s business rules. By default, it is set to 0.
 
 ## Development & Testing
 
 To run the DOPC service locally:
 
-    Clone the repository:
+> Clone the repository:
 
-git clone https://github.com/yourusername/dopc.git
+```git clone https://github.com/Paula-ca/Delivery_order_price_calculator.git```
 
-Navigate to the project directory:
+> Navigate to the project directory:
 
-cd dopc
+```cd DOPC```
 
-Install the necessary dependencies:
+> Install the necessary dependencies:
 
-go mod tidy
+```go mod tidy```
 
-Start the service:
+> Start the service:
 
-go run main.go
+```go run main.go```
 
-Open Postman or any other API client to send a GET request to the endpoint:
+> Open Postman or any other API client to send a GET request to the endpoint:
 
-    http://localhost:8080/api/v1/delivery-order-price?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087
+  ```http://localhost:8080/api/v1/delivery-order-price?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087```
 
-    You should receive a JSON response with the calculated price breakdown.
+  > You should receive a JSON response with the calculated price breakdown.
 
 ## Conclusion
 
