@@ -13,11 +13,17 @@ Endpoint: GET /api/v1/delivery-order-price
 ### Query Parameters
 
 The following query parameters are required for the endpoint:
-Parameter	Type	Description
-venue_slug	string	A unique identifier (slug) for the venue (restaurant, shop, etc.) where the order will be placed.
-cart_value	integer	The total value of the items in the shopping cart (in the currency unit).
-user_lat	float64	The latitude of the user's location (decimal value).
-user_lon	float64	The longitude of the user's location (decimal value).
+
+|Parameter	|Type	    |Description                                                                                      |
+|:---------:|:---------:|:-----------------------------------------------------------------------------------------------:|
+|venue_slug	|string	    |A unique identifier (slug) for the venue (restaurant, shop, etc.)where the order will be placed. |
+|:---------:|:---------:|:-----------------------------------------------------------------------------------------------:|
+|cart_value	|integer	|The total value of the items in the shopping cart (in the currency unit).                        |
+|:---------:|:---------:|:-----------------------------------------------------------------------------------------------:|
+|user_lat	|float64	|The latitude of the user's location (decimal value).                                             |
+|:---------:|:---------:|:-----------------------------------------------------------------------------------------------:|
+|user_lon	|float64	|The longitude of the user's location (decimal value).                                            |
+
 Example Request
 
 An example of a request to the DOPC service could look like this:
