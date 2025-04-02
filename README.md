@@ -1,15 +1,15 @@
-Delivery Order Price Calculator Service (DOPC)
-Overview
+# Delivery Order Price Calculator Service (DOPC)
+## Overview
 
 The Delivery Order Price Calculator (DOPC) is a backend service designed to calculate the total price and the breakdown of a delivery order. It integrates with the Home Assignment API to fetch venue-specific data necessary for calculating the prices.
 
 The term venue refers to any kind of restaurant, shop, or store.
 
 The DOPC service provides a single endpoint that accepts the following query parameters and returns a price breakdown for a delivery order.
-API Endpoint
+## API Endpoint
 
 Endpoint: GET /api/v1/delivery-order-price
-Query Parameters
+## Query Parameters
 
 The following query parameters are required for the endpoint:
 Parameter	Type	Description
@@ -31,7 +31,7 @@ In this example:
 
     The user_lat and user_lon are the latitude and longitude of the user's location in Helsinki.
 
-API Response
+## API Response
 
 The response will be a JSON object that includes the calculated total price, the small order surcharge, the cart value, and the delivery details (fee and distance).
 Example Response
@@ -46,7 +46,7 @@ Example Response
   }
 }
 
-Response Fields
+## Response Fields
 
     total_price (integer): The calculated total price for the delivery order, which includes the cart value and the delivery fee.
 
@@ -60,7 +60,7 @@ Response Fields
 
         distance (integer): The calculated delivery distance in meters from the user's location to the venue.
 
-Error Handling
+## Error Handling
 
 If any of the required query parameters are missing or invalid, or if there is an issue with the external API calls, the service will return an appropriate HTTP error response with a relevant error message.
 
@@ -76,7 +76,7 @@ Example Error Response
   "error": "Invalid cart_value"
 }
 
-Postman Documentation
+## Postman Documentation
 
 For a more detailed walkthrough and examples, you can refer to the Postman documentation for this API:
 
@@ -95,7 +95,7 @@ Notes
 
     The small_order_surcharge can be configured based on the venue’s business rules. By default, it is set to 0.
 
-Development & Testing
+## Development & Testing
 
 To run the DOPC service locally:
 
@@ -121,8 +121,8 @@ Open Postman or any other API client to send a GET request to the endpoint:
 
     You should receive a JSON response with the calculated price breakdown.
 
-Conclusion
+## Conclusion
 
 The Delivery Order Price Calculator (DOPC) service allows you to calculate the total price and price breakdown of a delivery order, including the delivery fee and distance. It integrates with external APIs to retrieve the necessary venue data and applies the relevant business rules to calculate the total price.
 
-Let me know if you need further modifications or clarifications!
+
