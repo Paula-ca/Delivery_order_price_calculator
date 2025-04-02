@@ -86,13 +86,13 @@ For a more detailed walkthrough and examples, you can refer to the Postman docum
 
 **How It Works:**
 
-  - The user sends a GET request to the DOPC endpoint, providing the required query parameters (venue_slug, cart_value, user_lat, and user_lon).
+  1. The user sends a GET request to the DOPC endpoint, providing the required query parameters (venue_slug, cart_value, user_lat, and user_lon).
 
-  - The service processes the request, validates the inputs, and then fetches data from the external Home Assignment API to calculate the delivery fee and distance.
+  2. The service processes the request, validates the inputs, and then fetches data from the external Home Assignment API to calculate the delivery fee and distance.
 
-  - The service calculates the total price, including any applicable small order surcharges, and then sends the response in the specified JSON format.
+  3. The service calculates the total price, including any applicable small order surcharges, and then sends the response in the specified JSON format.
 
-**Notes**
+**Notes:**
 
   - The DOPC service integrates with external APIs to fetch real-time venue data and calculate delivery charges. These external APIs may be subject to availability or changes in their structure.
 
@@ -102,27 +102,27 @@ For a more detailed walkthrough and examples, you can refer to the Postman docum
 
 To run the DOPC service locally:
 
- **Clone the repository:**
+ **1. Clone the repository:**
 
 ```git clone https://github.com/Paula-ca/Delivery_order_price_calculator.git```
 
- **Navigate to the project directory:**
+ **2. Navigate to the project directory:**
 
 ```cd DOPC```
 
- **Install the necessary dependencies:**
+ **3. Install the necessary dependencies:**
 
 ```go mod tidy```
 
- **Start the service:**
+ **4. Start the service:**
 
 ```go run main.go```
 
- **Open Postman or any other API client to send a GET request to the endpoint:**
+ **5. Open Postman or any other API client to send a GET request to the endpoint:**
 
   ```http://localhost:8080/api/v1/delivery-order-price?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087```
 
-  **You should receive a JSON response with the calculated price breakdown.**
+  **6. You should receive a JSON response with the calculated price breakdown.**
 
 ## Conclusion
 
