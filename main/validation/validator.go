@@ -6,11 +6,11 @@ import (
 )
 
 // function to validate small_order_surcharge not be negative
-func ValidateSmallOrderSurcharge(small_order_surcharge int) error {
+func ValidateSmallOrderSurcharge(small_order_surcharge int) int {
 	if small_order_surcharge < 0 {
-		return fmt.Errorf("error, the small order surcharge can not be negative.Try with a minus cart value")
+		small_order_surcharge = 0
 	}
-	return nil
+	return small_order_surcharge
 }
 
 // function to validate distance
@@ -37,7 +37,7 @@ func ValidateDistanceHandler(distance int, distance_ranges *entities.DistanceRan
 // function to validate cart price
 func ValidateCartPrice(price int) error {
 	if price < 0 {
-		return fmt.Errorf("error, the cart price can not be negative.")
+		return fmt.Errorf("error, invalid cart value")
 	}
 
 	return nil
@@ -55,6 +55,6 @@ func ValidateVenueSlug(venue string) error {
 			return nil
 		}
 	}
-	err := fmt.Errorf("invalid venue_slug provided")
+	err := fmt.Errorf("error, invalid venue_slug provided")
 	return err
 }

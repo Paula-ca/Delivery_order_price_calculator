@@ -40,11 +40,8 @@ func (r *RealAPIClient) CallDynamicAPI(url string, cartValue int) (interface{}, 
 	var deliveryFee = base_price + distance_ranges[0].A + int(distance_ranges[0].B)*DistanceExport()/10
 	var totalPrice = cartValue + smallOrderSurcharge + deliveryFee
 
-	//validation of small_order_surcharge
-	err = validation.ValidateSmallOrderSurcharge(smallOrderSurcharge)
-	if err != nil {
-		return entities.OrderPrice{}, NewApiError(err.Error(), http.StatusBadRequest)
-	}
+	//validation of small_order_surcharge(if is <0 set to cero)
+	smallOrderSurcharge = validation.ValidateSmallOrderSurcharge(smallOrderSurcharge)
 	//validation of distance
 	err = validation.ValidateDistanceHandler(DistanceExport(), &distance_ranges[0])
 	if err != nil {
