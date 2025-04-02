@@ -71,17 +71,10 @@ If any of the required query parameters are missing or invalid, or if there is a
 
 For example:
 
-  > If cart_value is not a valid integer, the response will be a 400 Bad Request with an error message like "Invalid cart_value".
+  - If cart_value is not a valid integer, the response will be a 400 Bad Request with an error message like "Invalid cart_value".
 
-  > If venue_slug is missing, the response will be a 400 Bad Request with an error message like "Venue slug is required".
+  - If venue_slug is missing, the response will be a 400 Bad Request with an error message like "Venue slug is required".
 
-Example Error Response
-
-```json
-{
-  "error": "Invalid cart_value"
-}
-```
 
 ## Postman Documentation
 
@@ -91,43 +84,43 @@ For a more detailed walkthrough and examples, you can refer to the Postman docum
 
 How It Works
 
-  > The user sends a GET request to the DOPC endpoint, providing the required query parameters (venue_slug, cart_value, user_lat, and user_lon).
+  - The user sends a GET request to the DOPC endpoint, providing the required query parameters (venue_slug, cart_value, user_lat, and user_lon).
 
-  > The service processes the request, validates the inputs, and then fetches data from the external Home Assignment API to calculate the delivery fee and distance.
+  - The service processes the request, validates the inputs, and then fetches data from the external Home Assignment API to calculate the delivery fee and distance.
 
-  > The service calculates the total price, including any applicable small order surcharges, and then sends the response in the specified JSON format.
+  - The service calculates the total price, including any applicable small order surcharges, and then sends the response in the specified JSON format.
 
 **Notes**
 
-  > The DOPC service integrates with external APIs to fetch real-time venue data and calculate delivery charges. These external APIs may be subject to availability or changes in their structure.
+  - The DOPC service integrates with external APIs to fetch real-time venue data and calculate delivery charges. These external APIs may be subject to availability or changes in their structure.
 
-  > The small_order_surcharge can be configured based on the venue’s business rules. By default, it is set to 0.
+  - The small_order_surcharge can be configured based on the venue’s business rules. By default, it is set to 0.
 
 ## Development & Testing
 
 To run the DOPC service locally:
 
-> Clone the repository:
+ **Clone the repository:**
 
 ```git clone https://github.com/Paula-ca/Delivery_order_price_calculator.git```
 
-> Navigate to the project directory:
+ **Navigate to the project directory:**
 
 ```cd DOPC```
 
-> Install the necessary dependencies:
+ **Install the necessary dependencies:**
 
 ```go mod tidy```
 
-> Start the service:
+ **Start the service:**
 
 ```go run main.go```
 
-> Open Postman or any other API client to send a GET request to the endpoint:
+ **Open Postman or any other API client to send a GET request to the endpoint:**
 
   ```http://localhost:8080/api/v1/delivery-order-price?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087```
 
-  > You should receive a JSON response with the calculated price breakdown.
+  **You should receive a JSON response with the calculated price breakdown.**
 
 ## Conclusion
 
