@@ -15,6 +15,7 @@ Endpoint: GET /api/v1/delivery-order-price
 The following query parameters are required for the endpoint:
 
 |Parameter	|Type	    |Description                                                                                      |
+|:---------:|:---------:|:-----------------------------------------------------------------------------------------------:|
 |venue_slug	|string	    |A unique identifier (slug) for the venue (restaurant, shop, etc.)where the order will be placed. |
 |cart_value	|integer	|The total value of the items in the shopping cart (in the currency unit).                        |
 |user_lat	|float64	|The latitude of the user's location (decimal value).                                             |
