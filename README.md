@@ -53,17 +53,17 @@ Example Response:
 ```
 
 ## Response Fields
-> total_price (integer): The calculated total price for the delivery order, which includes the cart value and the delivery fee.
+- total_price (integer): The calculated total price for the delivery order, which includes the cart value and the delivery fee.
 
-> small_order_surcharge (integer): The surcharge applied if the order value is too small (e.g., a minimum cart value threshold). This value is 0 if no surcharge is applied.
+- small_order_surcharge (integer): The surcharge applied if the order value is too small (e.g., a minimum cart value threshold). This value is 0 if no surcharge is applied.
 
-> cart_value (integer): The cart value provided in the query parameters (same as cart_value).
+- cart_value (integer): The cart value provided in the query parameters (same as cart_value).
 
-> delivery (object):
+- delivery (object):
 
-  > fee (integer): The calculated delivery fee based on the venue, distance, and cart value.
+  - fee (integer): The calculated delivery fee based on the venue, distance, and cart value.
 
-  > distance (integer): The calculated delivery distance in meters from the user's location to the venue.
+  - distance (integer): The calculated delivery distance in meters from the user's location to the venue.
 
 ## Error Handling
 
@@ -97,7 +97,7 @@ How It Works
 
   > The service calculates the total price, including any applicable small order surcharges, and then sends the response in the specified JSON format.
 
-** Notes **
+**Notes**
 
   > The DOPC service integrates with external APIs to fetch real-time venue data and calculate delivery charges. These external APIs may be subject to availability or changes in their structure.
 
