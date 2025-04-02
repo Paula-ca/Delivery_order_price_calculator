@@ -9,7 +9,8 @@ The DOPC service provides a single endpoint that accepts the following query par
 ## API Endpoint
 
 Endpoint: GET /api/v1/delivery-order-price
-## Query Parameters
+
+### Query Parameters
 
 The following query parameters are required for the endpoint:
 Parameter	Type	Description
@@ -80,7 +81,7 @@ Example Error Response
 
 For a more detailed walkthrough and examples, you can refer to the Postman documentation for this API:
 
-View Postman Documentation ---> https://documenter.getpostman.com/view/18629048/2sB2cSfiDS
+[View Postman Documentation]([https://pages.github.com/](https://documenter.getpostman.com/view/18629048/2sB2cSfiDS).
 
 How It Works
 
