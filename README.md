@@ -40,7 +40,8 @@ In this example:
 ## API Response
 
 The response will be a JSON object that includes the calculated total price, the small order surcharge, the cart value, and the delivery details (fee and distance).
-Example Response:
+
+**Example Response:**
 ```json
 {
   "total_price": 1190,
@@ -83,7 +84,7 @@ For a more detailed walkthrough and examples, you can refer to the Postman docum
 
 [View Postman Documentation](https://documenter.getpostman.com/view/18629048/2sB2cSfiDS).
 
-How It Works
+**How It Works:**
 
   - The user sends a GET request to the DOPC endpoint, providing the required query parameters (venue_slug, cart_value, user_lat, and user_lon).
 
