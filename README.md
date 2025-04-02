@@ -71,9 +71,9 @@ If any of the required query parameters are missing or invalid, or if there is a
 
 For example:
 
-  - If cart_value is not a valid integer, the response will be a 400 Bad Request with an error message like "Invalid cart_value".
+  - If cart_value is not a valid integer, the response will be a 400 Bad Request with an error message like "Error, invalid cart_value".
 
-  - If venue_slug is missing, the response will be a 400 Bad Request with an error message like "Venue slug is required".
+  - If venue_slug is missing, the response will be a 400 Bad Request with an error message like "Error, invalid venue_slug provided".
 
 
 ## Postman Documentation
