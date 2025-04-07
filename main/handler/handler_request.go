@@ -3,7 +3,7 @@ package handler
 import (
 	"encoding/json"
 	"example/DOPC/main/api"
-	"example/DOPC/main/validation"
+	"example/DOPC/main/utils"
 	"net/http"
 	"strconv"
 )
@@ -20,7 +20,7 @@ func HandleRequest(w http.ResponseWriter, r *http.Request, apiClient api.APIClie
 	}
 	str := queryParams.Get("venue_slug")
 	//function to validate venue slug string
-	err = validation.ValidateVenueSlug(str)
+	err = utils.ValidateVenueSlug(str)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
@@ -36,9 +36,9 @@ func HandleRequest(w http.ResponseWriter, r *http.Request, apiClient api.APIClie
 		return
 	}
 	//function to validate the cart price is not negative
-	err = validation.ValidateCartPrice(num)
+	err = utils.ValidateCartPrice(num)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 

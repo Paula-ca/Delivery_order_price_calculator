@@ -2,7 +2,6 @@ package test
 
 import (
 	"encoding/json"
-
 	"example/DOPC/main/handler"
 	"fmt"
 	"net/http"
@@ -14,7 +13,7 @@ import (
 
 // Test HandleRequest with Mock API Client
 func TestHandleRequest_Valid(t *testing.T) {
-	req, err := http.NewRequest("GET", "/?cart_value=100&venue_slug=home-assignment-venue-helsinki&user_lat=40.7128&user_lon=-74.0060", nil)
+	req, err := http.NewRequest("GET", "/?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -48,7 +47,7 @@ func TestHandleRequest_Valid(t *testing.T) {
 
 func TestHandleRequest_InvalidCartValue(t *testing.T) {
 	// Test case where the cart_value is not a valid integer
-	req, err := http.NewRequest("GET", "/?cart_value=invalid&venue_slug=valid_slug&user_lat=40.7128&user_lon=-74.0060", nil)
+	req, err := http.NewRequest("GET", "/?venue_slug=home-assignment-venue-helsinki&cart_value=invalid&user_lat=60.17094&user_lon=24.93087", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -67,12 +66,12 @@ func TestHandleRequest_InvalidCartValue(t *testing.T) {
 	assert.Equal(t, http.StatusBadRequest, rr.Code)
 	// Check the body of the response
 	body := rr.Body.String()
-	assert.Contains(t, body, "invalid syntax") // Ensure the error message contains "invalid syntax"
+	assert.Contains(t, body, "invalid")
 }
 
 func TestHandleRequest_MissingVenueSlug(t *testing.T) {
 	// Test case where venue_slug is missing
-	req, err := http.NewRequest("GET", "/?cart_value=100&user_lat=40.7128&user_lon=-74.0060", nil)
+	req, err := http.NewRequest("GET", "/?venue_slug=&cart_value=1000&user_lat=60.17094&user_lon=24.93087", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -95,7 +94,7 @@ func TestHandleRequest_MissingVenueSlug(t *testing.T) {
 }
 
 func TestHandleRequest_APIErrorStatic(t *testing.T) {
-	req, err := http.NewRequest("GET", "/?cart_value=100&venue_slug=valid_slug&user_lat=40.7128&user_lon=-74.0060", nil)
+	req, err := http.NewRequest("GET", "/?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -118,7 +117,7 @@ func TestHandleRequest_APIErrorStatic(t *testing.T) {
 	assert.Contains(t, body, "Static API error") // Ensure the error message is returned
 }
 func TestHandleRequest_APIErrorDynamic(t *testing.T) {
-	req, err := http.NewRequest("GET", "/?cart_value=100&venue_slug=valid_slug&user_lat=40.7128&user_lon=-74.0060", nil)
+	req, err := http.NewRequest("GET", "/?venue_slug=home-assignment-venue-helsinki&cart_value=1000&user_lat=60.17094&user_lon=24.93087", nil)
 	if err != nil {
 		t.Fatal(err)
 	}

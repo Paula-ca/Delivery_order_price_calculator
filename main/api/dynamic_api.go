@@ -3,7 +3,8 @@ package api
 import (
 	"encoding/json"
 	"example/DOPC/main/entities"
-	"example/DOPC/main/validation"
+	"example/DOPC/main/utils"
+
 	"fmt"
 	"io"
 	"net/http"
@@ -41,9 +42,9 @@ func (r *RealAPIClient) CallDynamicAPI(url string, cartValue int) (interface{}, 
 	var totalPrice = cartValue + smallOrderSurcharge + deliveryFee
 
 	//validation of small_order_surcharge(if is <0 set to cero)
-	smallOrderSurcharge = validation.ValidateSmallOrderSurcharge(smallOrderSurcharge)
+	smallOrderSurcharge = utils.ValidateSmallOrderSurcharge(smallOrderSurcharge)
 	//validation of distance
-	err = validation.ValidateDistanceHandler(DistanceExport(), &distance_ranges[0])
+	err = utils.ValidateDistanceHandler(DistanceExport(), &distance_ranges[0])
 	if err != nil {
 		return entities.OrderPrice{}, NewApiError(err.Error(), http.StatusBadRequest)
 	}

@@ -1,6 +1,8 @@
 package test
 
-import "example/DOPC/main/api"
+import (
+	"example/DOPC/main/api"
+)
 
 // Mock API Client for testing
 type MockAPIClient struct{}
