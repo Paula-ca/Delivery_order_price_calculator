@@ -52,11 +52,10 @@ The response will be a JSON object that includes the calculated total price, the
 }
 ```
 
-<<<<<<< HEAD
 ### Response Fields
 =======
 **Response Fields:**
->>>>>>> d488713cc9e6fad7be43bb58629f7edc649cad3a
+
 - total_price (integer): The calculated total price for the delivery order, which includes the cart value and the delivery fee.
 
 - small_order_surcharge (integer): The surcharge applied if the order value is too small (e.g., a minimum cart value threshold). This value is 0 if no surcharge is applied.
