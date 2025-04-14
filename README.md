@@ -53,7 +53,7 @@ The response will be a JSON object that includes the calculated total price, the
 ```
 
 ### Response Fields
-=======
+
 **Response Fields:**
 
 - total_price (integer): The calculated total price for the delivery order, which includes the cart value and the delivery fee.
